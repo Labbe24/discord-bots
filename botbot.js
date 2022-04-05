@@ -34,19 +34,11 @@ async function playYouTube(song) {
 	try {
 		dispatcher = connection.play(await ytdl('https://www.youtube.com/watch?v='+song.id), { type: 'opus', filter: 'audioonly' });
 		dispatcher.setVolume(0.25);
-<<<<<<< HEAD
 
 		dispatcher.on('start', () => {
 			console.log('music is now playing!');
 		});
 
-=======
-
-		dispatcher.on('start', () => {
-			console.log('music is now playing!');
-		});
-
->>>>>>> 660156bac55c9a3c497a17cce71c2aeec1ff984e
 		dispatcher.on('finish', async () => {
 			console.log('music has finished playing!');
 			// if queue not empty, play next song in queue
